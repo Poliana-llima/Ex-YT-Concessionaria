@@ -1,0 +1,226 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 600px;
+    gap: 180px;
+    z-index: 2;
+}
+
+header img {
+    width: 250px;
+}
+
+header nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+}
+
+section {
+    background-image: radial-gradient(#7f3d9e, #6d00d9 );
+    height: 100vh;
+    position: relative;
+}
+
+.lista {
+    width: 70vw;
+    height: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.lista::before{
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    top: 50%;
+    border-top: 1px solid #fff;
+}
+
+.item {
+    position: absolute;
+    inset:0;
+}
+
+.carro-imagem {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
+}
+
+.carro-imagem img {
+    width: 100%;
+    transform: rotate(-30deg);
+}
+
+.informacao{
+    position: absolute;
+    right: 100px;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+}
+
+.carro-informacao {
+    font-weight: bold;
+}
+
+.informacao h2 {
+    font-size: 5em;
+    line-height: 1em;
+    font-family: "League Gothic", sans-serif;
+}
+
+.descricao {
+    color: #d9d9d9;
+    font-size: 16px;
+    text-align: right;
+    max-width: 400px;
+    font-family: "League Gothic", sans-serif;
+}
+
+.setas {
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.setas .seta-direita {
+    transform: scale(-1);
+}
+
+.setas button {
+    top: 60%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.setas button:hover {
+    background-color: #beff1b;
+}
+
+.setas button img {
+    width: 30px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.btn-saiba {
+    border-radius: 30px;
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px solid #7f3d9e;
+    background-color: #beff1b;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.indicadores {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+    font-family: "League Gothic", sans-serif;
+}
+
+.indicadores .numeros {
+    font-size: 5em;
+    font-family: "League Gothic", sans-serif;
+}
+
+.indicadores ul {
+    display: flex;
+    gap: 10px;
+}
+
+.indicadores ul li {
+    width: 50px;
+    height: 5px;
+    background-color: #beff1b;
+    border-radius: 5px;
+    transition:  0.5s;
+}
+
+.indicadores .active {
+    background-color: #fff;
+}
+
+/*animações*/
+
+.item {
+    transform: translateX(100vw);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.item .carro-imagem img {
+    transform: rotate(0);
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+.carro-informacao, .informacao h2, .descricao, .btn-saiba {
+    transform: translateX(200px);
+    transition: 0.7s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+
+.informacao h2 {
+    transition-delay: 0.5s;
+}
+
+.descricao{
+    transition-delay: 0.7s;
+}
+
+.btn-saiba {
+    transition-delay: 0.9s;
+}
+
+
+.active {
+    transform: translateX(0);
+    transition: 0.5s;
+    opacity: 1; 
+}
+
+.active, .lista .carro-imagem img {
+    transform: rotate(-20deg);
+}
+
+.active, .carro-informacao, .informacao h2, .descricao, .btn-saiba {
+    transform: translateX(0);
+    opacity: 1;
+}
